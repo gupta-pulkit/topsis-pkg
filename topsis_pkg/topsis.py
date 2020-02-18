@@ -61,7 +61,7 @@ def topsis(data, weight, impact):
 
     return ranks
 
-if __name__ == "__main__":
+def main():
     file_name = sys.argv[1]
     weight = sys.argv[2]
     impact = sys.argv[3]
@@ -80,3 +80,6 @@ if __name__ == "__main__":
     print(ranks)
     best_alt_idx = np.argmin(ranks)
     print("The best is alternative corresponding to row", best_alt_idx+1)
+
+if __name__ == "__main__":
+    main()
