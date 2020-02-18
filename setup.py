@@ -1,25 +1,28 @@
-import setuptools
+from setuptools import setup
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+def readme():
+    with open('README.md', encoding="utf8") as f:
+        README = f.read()
+    return README
 
-setuptools.setup(
+
+setup(
     name="topsis-pkg",
-    version="0.0.1",
+    version="1.0.0",
     author="Pulkit Gupta",
     author_email="guptapulkit48@gmail.com",
     description="A package for TOPSIS analysis.",
-    long_description=long_description,
+    long_description=readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/gupta-pulkit/topsis-pkg",
-    packages=setuptools.find_packages(),
+    license="MIT",
     classifiers=[
-        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
     ],
-    python_requires='>=3.6',
-    include_package_data = True,
+    packages=["topsis_pkg"],
+    include_package_data=True,
     install_requires=["numpy", "pandas"],
     entry_points={
         "console_scripts": [
